@@ -1,0 +1,104 @@
+addEvent(submitBtn, "submit", function() {
+    var test = email.value.length = 0 || emailRegExp.test(email.value);
+
+    if (!test) {
+        email.className = "invalid";
+        error.innerHTML = "merci blabla";
+        error.className = "error active";
+        return false;
+    }
+})
+
+var prenom = document.querySelector('#first')
+var nom = document.querySelector('#last')
+var email = document.querySelector('#email')
+var birthdate = document.querySelector('#birthdate')
+var tournoisquant = document.querySelector('#quantity')
+var villes = document.querySelector('.formData')
+
+function formcontent() {
+    var prenom = document.forms["reserve"]["formData"];
+
+    if (prenom.value == "") {
+        alert("Veuillez entrer 2 caractères ou plus pour le champ du nom.");
+        prenom.focus();
+        return false;
+    }
+    return true;
+}
+
+function bodyform() {
+    var first = document.forms["reserve"]["first"];
+
+    if (first.value.length == "1") {
+        alert("");
+        first.focus();
+        return false;
+    }
+    if (last.value.length == "1") {
+        alert("");
+        last.focus();
+        return false;
+    }
+    if (quantity.value.length == "") {
+        alert("Saisissez au moins 0 tournoi...");
+        quantity.focus();
+        return false;
+    }
+    if (location.checkboxInput == "") {
+        alert("blablabla...");
+        location.focus();
+        return false;
+    }
+}
+
+
+const nom = document.querySelector("#last");
+
+document.getElementsByName("reserve")[0].addEventListener('submit', Validate)
+
+function Validate(event) {
+    event.preventDefault()
+    const prenom = document.querySelector("#first");
+    const nom = document.querySelector("#last");
+    if (prenom.value.length < 3) {
+        const errorFirst = document.getElementById("errorTextFirst");
+        errorFirst.style.display = "block";
+    }
+    if (nom.value < 3) {
+
+    }
+}
+
+
+
+let isValid = true;
+isValid = document.querySelector('#first'), input, ...
+
+methodValidation('value', "type", "content") => {
+    switch (first) {
+        case: first.value.length < 2;
+        break
+    }
+}
+
+
+isFormValid = firstChecker(reserveForm.commercialcheck, "checkbox", "") && isFormValid;
+
+
+isFormValid = firstChecker(reserveForm.radiocity, "radio", "errorTextRadio") && isFormValid;
+
+
+
+case 'input':
+    isValid = value.length >= 2;
+    break
+case 'input':
+    let mailFormat = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    isValid = value && value.length && mailFormat.test(email.value.trim(mailFormat))
+    break
+
+case 'date':
+    let dateFormat = /^(0[1-9]|1\d|2\d|3[01])\-(0[1-9]|1[0-2])\-(19|20)\d{2}$/;
+    isValid = value && value.length && dateFormat.test(value.trim(dateFormat))
+    break
